@@ -1,14 +1,27 @@
 ---
-import Layout from '../layouts/Layout.astro';
+import Layout from "../layouts/Layout.astro";
+import Bienvenido from "../components/Bienvenido.astro";
 ---
 
 <Layout title="SoyDuque">
-	<main class="flex items-center justify-center flex-col h-screen bg-slate-100">
-		<h1 class="text-4xl bg-gradient-to-r from-blue-600 via-green-500 to-purple-400 text-transparent bg-clip-text">Inicio</h1>
-		<p>Bienvenido bebe</p>
-	</main>
+  <main class="flex items-center justify-center flex-col h-screen bg-slate-100">
+    <section>
+      <div>
+        <h1
+          class="text-4xl md:text-6xl font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-purple-400 text-transparent bg-clip-text"
+        >
+          ¡Bienvenido <span class="text-black">👋</span>, gracias por visitar mi sitio web!
+        </h1>
+		<div class="flex flex-col md:flex-row items-center h-28 text-4xl md:text-6xl text-zinc-800">
+			<p>Me llamo Iván y soy </p> <Bienvenido />
+		</div>
+    </section>
+  </main>
 </Layout>
 
 <style>
-
+	h1 {
+		line-height: normal;
+	}
 </style>
+
