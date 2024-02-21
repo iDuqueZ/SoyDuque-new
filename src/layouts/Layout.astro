@@ -2,13 +2,13 @@
 // This is the layout for the entire site
 
 //Import the Navbar component
-import Navbar from '../components/Navbar.astro';
+import Navbar from "../components/Navbar.astro";
 
 //Import the Footer component
-import Footer from '../components/Footer.astro';
+import Footer from "../components/Footer.astro";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -16,36 +16,42 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
 
-	<header>
-		<Navbar />
-	</header>
+  <header>
+    <Navbar />
+  </header>
 
-	<body>
-		<slot />
-		<Footer />
-	</body>
+  <body>
+    <slot />
+    <Footer />
+  </body>
+
+  <style is:global>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+	*::selection {
+		background-color: #1f1f1f;
+		color: #ffff;
+	}
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+  </style>
 </html>
-<style is:global>
-		* {
-		margin: 0;
-		padding: 0;
-		box-sizing: border-box;
-	}
-
-	a {
-		text-decoration: none;
-	}
-
-	ul {
-		list-style: none;
-	}
-</style>
