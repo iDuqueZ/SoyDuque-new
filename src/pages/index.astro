@@ -1,27 +1,25 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import Bienvenido from "../components/Bienvenido.astro";
+import Hero from "../components/Hero.astro";
 ---
 
 <Layout title="SoyDuque">
   <main class="flex items-center justify-center flex-col h-screen bg-slate-100">
-    <section>
-      <div>
-        <h1
-          class="text-4xl md:text-6xl font-semibold bg-gradient-to-r from-blue-600 via-green-500 to-purple-400 text-transparent bg-clip-text"
-        >
-          ¡Bienvenido <span class="text-black">👋</span>, gracias por visitar mi sitio web!
-        </h1>
-		<div class="flex flex-col md:flex-row items-center h-28 text-4xl md:text-6xl text-zinc-800">
-			<p>Me llamo Iván y soy </p> <Bienvenido />
-		</div>
-    </section>
+    <Hero />
+
+    <!-- FLEHA HACIA ABAJO -->
+    <div class="flex flex-col items-center justify-center">
+
+      <svg
+	  	class="animate-bounce w-6 h-6 text-zinc-600"
+        width="24"
+        height="24"
+        viewBox="0 0 24 24"
+        style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"
+        ><path
+          d="M16.293 9.293 12 13.586 7.707 9.293l-1.414 1.414L12 16.414l5.707-5.707z"
+        ></path></svg
+      >
+    </div>
   </main>
 </Layout>
-
-<style>
-	h1 {
-		line-height: normal;
-	}
-</style>
-
