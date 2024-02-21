@@ -1,0 +1,47 @@
+---
+
+---
+
+<header>
+    <nav class="max-w-screen-2xl border-b-2 shadow-md h-16 flex flex-row mx-auto px-5 justify-between items-center">
+        <div class="logo">
+            <a href="/">
+                <img src="/logo.svg" width="80px" height="40px" alt="Logo de SoyDuque">
+            </a>
+        </div> 
+
+        <!-- Menu para moviles -->
+        <div class="menu-icon">
+            <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+        </div>
+
+        <!-- Menu desplegable -->
+        <ul class="absolute top-16 left-0 bg-slate-50 p-5 rounded-b-md w-full flex flex-col gap-4 shadow-lg">
+            <li><a class="hover:text-teal-600" href="/">Inicio</a></li>
+            <li><a class="hover:text-teal-600" href="/about">Sobre mi</a></li>
+            <li><a class="hover:text-teal-600" href="/blog">Blog</a></li>
+        </ul>
+
+        <!-- Menu para escritorio -->
+        <ul class="flex gap-3 hidden md:block">
+            <li><a class="hover:text-teal-600" href="/">Inicio</a></li>
+            <li><a class="hover:text-teal-600" href="/about">Sobre mi</a></li>
+            <li><a class="hover:text-teal-600" href="/blog">Blog</a></li>
+        </ul>
+
+
+
+    </nav>
+</header>
+
+<script>
+    const menuIcon = document.querySelector('.menu-icon');
+    const menu = document.querySelector('ul');
+
+    menuIcon.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+    });
+</script>

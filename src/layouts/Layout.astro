@@ -1,0 +1,51 @@
+---
+// This is the layout for the entire site
+
+//Import the Navbar component
+import Navbar from '../components/Navbar.astro';
+
+//Import the Footer component
+import Footer from '../components/Footer.astro';
+
+interface Props {
+	title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+	</head>
+
+	<header>
+		<Navbar />
+	</header>
+
+	<body>
+		<slot />
+		<Footer />
+	</body>
+</html>
+<style is:global>
+		* {
+		margin: 0;
+		padding: 0;
+		box-sizing: border-box;
+	}
+
+	a {
+		text-decoration: none;
+	}
+
+	ul {
+		list-style: none;
+	}
+</style>
