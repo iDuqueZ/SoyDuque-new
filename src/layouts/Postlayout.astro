@@ -1,0 +1,22 @@
+---
+import Bloglayout from '../layouts/Bloglayout.astro'
+const {frontmatter} = Astro.props
+
+---
+
+<Bloglayout title={frontmatter.title}>
+
+  <main class="flex flex-row max-w-screen-xl mx-auto mb-16 mt-24 gap-6">
+      <article class="w-4/5">
+        <h1 class="text-6xl text-center text-zinc-800 font-semibold mb-6">{frontmatter.title}</h1>
+        <p class="mb-6 text-center">{frontmatter.description}</p>
+        <p class="mb-6 text-center">{frontmatter.date}</p>
+        <p class="mb-6 text-center">{frontmatter.author}</p>
+        <slot  />
+      </article>
+
+      <aside class="w-1/5 bg-red-400">
+
+      </aside>
+  </main>
+</Bloglayout>

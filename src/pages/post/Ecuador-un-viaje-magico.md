@@ -1,4 +1,5 @@
 ---
+layout: ../../layouts/Postlayout.astro
 pubDate: 2023-08-31
 title: 'Ecuador un viaje mágico'
 description: 'La felicidad son pequeños momentos, y no hay nada más hermoso que construir estos momentos con personas especiales.'
