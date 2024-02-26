@@ -4,7 +4,7 @@ const {frontmatter} = Astro.props
 
 ---
 
-<Bloglayout title={frontmatter.title}>
+<Bloglayout title={frontmatter.title} description={frontmatter.description}>
 
   <main class="flex flex-row max-w-screen-xl mx-auto mb-16 mt-24 gap-6">
       <article class="w-4/5">
