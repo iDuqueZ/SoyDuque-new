@@ -40,10 +40,10 @@ const { title } = Astro.props;
       box-sizing: border-box;
     }
 
-	*::selection {
-		background-color: #1f1f1f;
-		color: #ffff;
-	}
+    *::selection {
+      background-color: #1f1f1f;
+      color: #ffff;
+    }
 
     a {
       text-decoration: none;
@@ -51,6 +51,26 @@ const { title } = Astro.props;
 
     ul {
       list-style: none;
+    }
+
+    ::-webkit-scrollbar {
+      border-radius: 10px;
+      width: 5px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #1f1f1f;
+      background-clip: content-box;
+      /* border: 2px solid #0000; */
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: transparent;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: transparent;
     }
   </style>
 </html>
