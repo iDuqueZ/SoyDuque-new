@@ -1,13 +1,13 @@
 ---
 //Import Layout
 import Bloglayout from "../layouts/Bloglayout.astro";
-import CardItem from "../components/CardItem.astro";
+import ListPosts from "../components/ListPosts.jsx";
 
 const postList = await Astro.glob("../pages/post/*.md");
 
 ---
 
-<Bloglayout title="Blog">
+<Bloglayout title="Blog" description="Blogs de SoyDuque">
   <main class="min-h-screen bg-slate-100 mt-16">
     <div class="max-w-screen-xl mx-auto">
       <section class="mb-8">
@@ -18,26 +18,11 @@ const postList = await Astro.glob("../pages/post/*.md");
           Aquí encontraras joyas y otras tantas cosas que me gusta escribir:
         </p>
       </section>
-
+      
       <section>
-        <ul class="grid md:grid-cols-4 gap-4">
-          {
-            postList.map(
-              (post) => (
-                (
-                  <CardItem 
-                    url={post.url} 
-                    imageUrl={post.frontmatter.image.url} 
-                    title={post.frontmatter.title}
-                    date={post.frontmatter.date}
-                    description={post.frontmatter.description}
-                  />
-                )
-              )
-            )
-          }
-        </ul>
+        <ListPosts postList={postList} client:load/>
       </section>
+      
     </div>
   </main>
 </Bloglayout>
@@ -45,5 +30,6 @@ const postList = await Astro.glob("../pages/post/*.md");
 <style>
   main {
     padding: 2rem;
+    transition: all 0.5s ease-in-out;
   }
 </style>

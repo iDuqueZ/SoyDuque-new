@@ -1,12 +1,13 @@
 ---
+layout: ../../layouts/Postlayout.astro
 pubDate: 2023-08-31
-title: 'Ecuador un viaje mágico'
+title: 'Bailalo'
 description: 'La felicidad son pequeños momentos, y no hay nada más hermoso que construir estos momentos con personas especiales.'
 author: 'Ivan D Duque ft Juan Jose Mora | Meritxel Gonzales | Lucia'
 image:
     url: 'https://i.ibb.co/nQ7HRmn/Whats-App-Image-2024-02-22-at-10-21-03-AM.jpg'
     alt: 'Foto del Viaje'
-tags: ["Ecuador", "Viajes", "StoryTime", "Anécdota"]
+tags: ["Ecuador", "Viajes", "StoryTime", "Personal"]
 ---
 
 Este artículo o blog cuenta mi experiencia saliendo por primera vez de Colombia en un viaje maravilloso al país de Ecuador para conocer a dos personitas que amo mucho: a dos de mis amigas que, a pesar de hablar siempre por medios digitales, las siento tan cercanas como cualquier otra que haya conocido hace mucho en persona. Y es que, aunque el contacto humano es hermoso, las secuelas de la pandemia nos dejan ver que en la distancia también hay momentos conmemorables.
