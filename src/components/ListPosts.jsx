@@ -12,7 +12,7 @@ const ListPosts = ({ postList }) => {
     const [filterBy, setFilterBy] = useState('all');
     const [searchPost, setSearchPost] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
-    const itemsPerPage = 12;
+    const itemsPerPage = 8;
 
     const lowerCaseSearch = searchPost.toLowerCase();
     const filteredPosts = dataPost.filter(post => {
@@ -63,15 +63,17 @@ const ListPosts = ({ postList }) => {
             </section>
 
             <section>
-                <ul className="grid md:grid-cols-4 gap-4">
+                <ul className="grid md:grid-cols-2 gap-4">
                     {currentItems.map((post, index) => (
                         <CardItem 
                             key={index} 
                             url={post.url} 
                             imageUrl={post.frontmatter.image.url} 
                             title={post.frontmatter.title}
-                            date={post.frontmatter.date}
+                            date={post.frontmatter.pubDate}
                             description={post.frontmatter.description}
+                            autor={post.frontmatter.author}
+                            tags={post.frontmatter.tags}
                         />
                     ))}
                 </ul>
@@ -91,7 +93,7 @@ const ListPosts = ({ postList }) => {
                     {Array.from({ length: totalPages }, (_, index) => index + 1).map(pageNumber => (
                     <div className=''>
                         <button 
-                            className={`bg-white outline-none border-[1px] border-l-0 p-2 border-zinc-500 text-wrap w-10 ${currentPage === pageNumber ? 'bg-blue-50 text-blue-600' : 'text-zinc-600'}`}
+                            className={`bg-white outline-none border-[1px] border-l-0 p-2 border-zinc-500 text-wrap w-10 ${currentPage === pageNumber ? 'bg-teal-50 text-teal-600' : 'text-zinc-600'}`}
                             key={pageNumber} 
                             onClick={() => paginate(pageNumber)}>
                             {pageNumber}
