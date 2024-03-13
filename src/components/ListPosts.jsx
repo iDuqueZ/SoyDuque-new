@@ -63,7 +63,7 @@ const ListPosts = ({ postList }) => {
             </section>
 
             <section>
-                <ul className="grid md:grid-cols-2 gap-4">
+                <ul className="grid md:grid-cols-1 gap-4">
                     {currentItems.map((post, index) => (
                         <CardItem 
                             key={index} 
@@ -93,7 +93,7 @@ const ListPosts = ({ postList }) => {
                     {Array.from({ length: totalPages }, (_, index) => index + 1).map(pageNumber => (
                     <div className=''>
                         <button 
-                            className={`bg-white outline-none border-[1px] border-l-0 p-2 border-zinc-500 text-wrap w-10 ${currentPage === pageNumber ? 'bg-teal-50 text-teal-600' : 'text-zinc-600'}`}
+                            className={`bg-white outline-none border-[1px] border-l-0 p-2 border-zinc-500 text-wrap w-10 ${currentPage === pageNumber ? 'bg-teal-50 text-teal-600 font-medium' : 'text-zinc-600'}`}
                             key={pageNumber} 
                             onClick={() => paginate(pageNumber)}>
                             {pageNumber}

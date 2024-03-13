@@ -5,7 +5,7 @@ title: 'Ecuador un viaje mágico'
 description: 'La felicidad son pequeños momentos, y no hay nada más hermoso que construir estos momentos con personas especiales.'
 author: 'Ivan D Duque ft Juan Jose Mora | Meritxel Gonzales | Lucia'
 image:
-    url: 'https://i.ibb.co/nQ7HRmn/Whats-App-Image-2024-02-22-at-10-21-03-AM.jpg'
+    url: '/post/Viaje-Ecuador.jpeg'
     alt: 'Foto del Viaje'
 tags: ["StoryTime", "Anécdota"]
 ---

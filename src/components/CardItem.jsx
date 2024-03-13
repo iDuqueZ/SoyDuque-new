@@ -11,11 +11,11 @@ const AstroComponent = ({ url, imageUrl, title, date, autor, tags }) => {
     <li className="bg-white rounded-md shadow-md  overflow-hidden">
       <a href={url} className="text-zinc-600 group">
       <div className="flex w-full">
-          <div className="h-100 w-3/12 overflow-hidden">
+          <div className="h-100 w-3/12 max-w-[180px] overflow-hidden hidden md:block">
             <img
               src={imageUrl}
               alt={title}
-              className="w-full h-full object-cover rounded-l-md transition-scale brightness-75 duration-500 ease-in-out group-hover:scale-110 group-hover:brightness-100"
+              className="w-full h-full max-h-[180px] object-cover rounded-l-md transition-scale brightness-75 duration-500 ease-in-out group-hover:scale-110 group-hover:brightness-100"
             />
           </div>
           <div className="p-4">
@@ -27,7 +27,7 @@ const AstroComponent = ({ url, imageUrl, title, date, autor, tags }) => {
               {tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-orange-100 text-orange-700 text-xs font-medium rounded-full py-2 px-3 mr-2 md:mb-2"
+                  className="bg-neutral-100 text-neutral-700 text-xs font-medium rounded-full py-2 px-3 mr-2 md:mb-2"
                 >
                   {tag}
                 </span>
