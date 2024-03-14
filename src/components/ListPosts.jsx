@@ -2,17 +2,32 @@ import React, { useEffect, useState } from 'react';
 import CardItem from './CardItem.jsx';
 
 const ListPosts = ({ postList }) => {
-    const [dataPost, setDataPost] = useState(postList);
+    const [dataPost, setDataPost] = useState(postList.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)));
 
     //Ordenar por fecha
     useEffect(() => {
         setDataPost(postList.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)));
     }, [postList]);
 
-    const [filterBy, setFilterBy] = useState('all');
+    const [filterBy, setFilterBy] = useState(() => {
+        const searchParams = new URLSearchParams(window.location.search);
+        const filter = searchParams.get('filter');
+        return filter || 'all';
+    });
+
+
     const [searchPost, setSearchPost] = useState('');
     const [currentPage, setCurrentPage] = useState(1);
     const itemsPerPage = 8;
+
+
+    const changeFilter = (e) => {
+
+        history.replaceState(null, '', `?filter=${e.target.value}`);
+
+        setFilterBy(e.target.value);
+    };
+
 
     const lowerCaseSearch = searchPost.toLowerCase();
     const filteredPosts = dataPost.filter(post => {
@@ -40,7 +55,7 @@ const ListPosts = ({ postList }) => {
                         name='filter'
                         id='filter'
                         className='filter-select p-2 border-b-2 border-zinc-400 text-zinc-600 accent-teal-500 outline-none text-lg bg-transparent'
-                        onChange={(e) => setFilterBy(e.target.value)}
+                        onChange={changeFilter}
                     >
                         <option value='all'>Todos</option>
                         <option value='Personal'>Personal</option>

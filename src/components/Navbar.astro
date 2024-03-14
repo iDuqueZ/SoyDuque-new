@@ -18,7 +18,7 @@
     </div>
 
     <!-- Menu para moviles -->
-    <div class="menu-icon md:hidden">
+    <div class="menu-icon md:hidden text-neutral-200">
       <svg
         class="h-6 w-6"
         fill="none"
@@ -37,7 +37,7 @@
     <ul
       class="absolute bg-white top-16 left-0 p-5 rounded-b-md w-full flex flex-col gap-4 shadow-lg hidden md:hidden"
     >
-      <li><a class="hover:text-teal-600" href="/">Inicio</a></li>
+      <li><a class="hover:text-teal-600 activado" href="/">Inicio</a></li>
       <li><a class="hover:text-teal-600" href="/about">Sobre mi</a></li>
       <li><a class="hover:text-teal-600" href="/blog">Blog</a></li>
     </ul>
@@ -46,7 +46,7 @@
     <ul class="flex gap-6 hidden md:flex h-full items-center">
       <li class="h-full">
         <a
-          class="h-full items-center flex hover:text-teal-600 hover:border-b-4 hover:border-teal-600 hover: text-zinc-100"
+          class="h-full items-center flex hover:text-teal-600 hover:border-b-4 hover:border-teal-600 hover: text-zinc-100 activado"
           href="/">Inicio</a>
       </li>
       <li class="h-full">
@@ -73,13 +73,41 @@
     /* box-shadow: 0 0 5px #ffee10; */
     text-shadow: 0 0 1px rgb(13 148 136);
   }
+
+  .activado {
+    color: rgb(45 212 191) !important;
+    /* box-shadow: 0 0 5px #ffee10; */
+    text-shadow: 0 0 1px rgb(13 148 136) !important;
+  }
 </style>
 
-<script>
-  const menuIcon = document.querySelector(".menu-icon");
-  const menu = document.querySelector("ul");
+<script is:inline>
 
-  menuIcon.addEventListener("click", () => {
-    menu.classList.toggle("hidden");
-  });
+  document.addEventListener('astro:page-load', () => {
+    const menuIcon = document.querySelector(".menu-icon");
+    const menu = document.querySelector("ul");
+  
+    menuIcon.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+
+    window.addEventListener("scroll", () => {
+      const header = document.querySelector("header");
+      header.classList.toggle("shadow-sm", window.scrollY > 0);
+    });
+
+    // Link active
+    const links = document.querySelectorAll("ul li a");
+    links.forEach((link) => {
+      //validar url
+      if (link.href === window.location.href || link.href === window.location.href + "/") {
+        link.classList.add("activado");
+      }else if (window.location.href.includes("post") && link.href.includes("blog")) {
+        link.classList.add("activado");
+      }else{
+        link.classList.remove("activado");
+      }
+    });
+  })
+
 </script>

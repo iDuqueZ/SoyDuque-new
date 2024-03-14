@@ -12,6 +12,7 @@
   "dependencies": {
     "@astrojs/react": "^3.1.0",
     "@astrojs/tailwind": "^5.1.0",
+    "@fontsource/shadows-into-light-two": "^5.0.19",
     "@types/react": "^18.2.65",
     "@types/react-dom": "^18.2.22",
     "astro": "^4.4.1",

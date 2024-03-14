@@ -21,7 +21,7 @@ const AstroComponent = ({ url, imageUrl, title, date, autor, tags }) => {
           </div>
 
           <div className="p-4">
-            <h2 className="text-2xl text-zinc-100 group-hover:text-teal-400 font-semibold mb-2">{title}</h2>
+            <h2 className="text-2xl text-zinc-100 group-hover:text-teal-400 underline-offset-4 group-hover:underline group-hover:decoration-dashed font-semibold mb-2">{title}</h2>
             <p className="text-sm text-zinc-400 mb-2">{autor}</p>
             <span className="text-sm text-zinc-400">{fechaFormateada}</span>
 
