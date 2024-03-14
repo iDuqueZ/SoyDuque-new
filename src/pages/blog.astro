@@ -4,7 +4,6 @@ import Bloglayout from "../layouts/Bloglayout.astro";
 import ListPosts from "../components/ListPosts.jsx";
 
 const postList = await Astro.glob("../pages/post/*.md");
-
 ---
 
 <Bloglayout title="Blog" description="Blogs de SoyDuque">
@@ -18,11 +17,10 @@ const postList = await Astro.glob("../pages/post/*.md");
           Aquí encontraras joyas y otras tantas cosas que me gusta escribir:
         </p>
       </section>
-      
+
       <section>
-        <ListPosts postList={postList} client:only/>
+        <ListPosts postList={postList} client:only />
       </section>
-      
     </div>
   </main>
 </Bloglayout>
@@ -35,14 +33,39 @@ const postList = await Astro.glob("../pages/post/*.md");
 </style>
 
 <script is:inline>
-  window.addEventListener('popstate', function(event) {
-    const url = new URL(window.location.href);
-    const params = new URLSearchParams(url.search);
-    const filter = params.get("filter");
+  document.addEventListener("astro:page-load", () => {
+    // Guarda una referencia al método original
+    const originalReplaceState = window.history.replaceState;
 
-    const $title = document.querySelector("h1 span");
-    if (filter) {
-      $title.textContent = `#${filter}`;
+    // Sobrescribe el método replaceState
+    window.history.replaceState = function (state, title, url) {
+      // Llama al método original
+      const result = originalReplaceState.apply(this, arguments);
+
+      // Actualiza el contenido según sea necesario
+      updateContent(); // Llama a una función para actualizar el contenido
+
+      return result;
+    };
+
+    // Función para actualizar el contenido según los parámetros de la URL
+    function updateContent() {
+      const url = new URL(window.location.href);
+      const params = new URLSearchParams(url.search);
+      const filter = params.get("filter");
+
+      const $title = document.querySelector("h1 span");
+      if (filter) {
+        if (filter === "all") {
+          $title.textContent = "";
+        } else {
+          // Actualiza el título según el filtro (si es necesario
+          $title.textContent = `#${filter}`;
+        }
+      }
     }
+
+    // Llama a la función updateContent para actualizar el contenido inicial
+    updateContent();
   });
 </script>
