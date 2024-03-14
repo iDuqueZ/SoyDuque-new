@@ -9,6 +9,8 @@ const ListPosts = ({ postList }) => {
         setDataPost(postList.sort((a, b) => new Date(b.frontmatter.pubDate) - new Date(a.frontmatter.pubDate)));
     }, [postList]);
 
+
+
     const [filterBy, setFilterBy] = useState(() => {
         const searchParams = new URLSearchParams(window.location.search);
         const filter = searchParams.get('filter');
@@ -21,11 +23,10 @@ const ListPosts = ({ postList }) => {
     const itemsPerPage = 8;
 
 
-    const changeFilter = (e) => {
-
-        history.replaceState(null, '', `?filter=${e.target.value}`);
-
-        setFilterBy(e.target.value);
+    const changeFilter = (tag) => {
+        history.replaceState(null, '', `?filter=${tag}`);
+        setFilterBy(tag);
+        toggleDropdown();
     };
 
 
@@ -47,11 +48,24 @@ const ListPosts = ({ postList }) => {
 
     const paginate = pageNumber => setCurrentPage(pageNumber);
 
+
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleDropdown = () => {
+        setIsOpen(!isOpen);
+    };
+
+    const handleClick = (tag) => {
+        changeFilter(tag);
+        toggleDropdown();
+    };
+
+
     return (
         <>
             <section className='flex gap-6 items-center mb-6'>
                 <div className='filterPost'>
-                    <select
+                    {/* <select
                         name='filter'
                         id='filter'
                         className='filter-select p-2 border-b-2 border-zinc-400 text-zinc-600 accent-teal-500 outline-none text-lg bg-transparent'
@@ -62,7 +76,54 @@ const ListPosts = ({ postList }) => {
                         <option value='Work'>Trabajo</option>
                         <option value='Studies'>Estudios</option>
                         <option value='StoryTime'>Story Time</option>
-                    </select>
+                    </select> */}
+
+                    <div className="relative">
+                        <button
+                            className="text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            type="button"
+                            onClick={toggleDropdown}
+                        >
+                            Tag
+                            <svg
+                                className={`w-2.5 h-2.5 ms-3 ${isOpen ? 'transform rotate-180' : ''}`}
+                                aria-hidden="true"
+                                fill="none"
+                                viewBox="0 0 10 6"
+                            >
+                                <path
+                                    stroke="currentColor"
+                                    strokeLinecap="round"
+                                    strokeLinejoin="round"
+                                    strokeWidth="2"
+                                    d="m1 1 4 4 4-4"
+                                />
+                            </svg>
+                        </button>
+                        {isOpen && (
+                            <div
+                                id="dropdownHover"
+                                className="z-10 absolute top-full bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                            >
+                                <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+                                    <li className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800'>
+                                        <button onClick={() => changeFilter('all')} className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Todos</button>
+                                    </li>
+                                    {[...new Set(postList.flatMap((post) => post.frontmatter.tags))].map((tag, index) => (
+                                        <li key={index} className="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+                                            <button
+                                                onClick={() => changeFilter(tag)}
+                                                className="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white"
+                                            >
+                                                {tag}
+                                            </button>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+
                 </div>
                 <div className='flex w-full relative'>
                     <input
@@ -80,10 +141,10 @@ const ListPosts = ({ postList }) => {
             <section>
                 <ul className="grid md:grid-cols-1 gap-4">
                     {currentItems.map((post, index) => (
-                        <CardItem 
-                            key={index} 
-                            url={post.url} 
-                            imageUrl={post.frontmatter.image.url} 
+                        <CardItem
+                            key={index}
+                            url={post.url}
+                            imageUrl={post.frontmatter.image.url}
                             title={post.frontmatter.title}
                             date={post.frontmatter.pubDate}
                             description={post.frontmatter.description}
@@ -94,9 +155,9 @@ const ListPosts = ({ postList }) => {
                 </ul>
                 <div className={`pagination flex mx-auto w-fit mt-6 shadow-md text-zinc-600 text-sm ${filteredPosts.length < 12 ? 'hidden' : 'flex'}`}>
                     {/* Boton anterior */}
-                    <button 
-                        className='bg-white outline-none border-1 p-2 rounded-l-md border-[1px] border-zinc-500' 
-                        disabled={currentPage === 1} 
+                    <button
+                        className='bg-white outline-none border-1 p-2 rounded-l-md border-[1px] border-zinc-500'
+                        disabled={currentPage === 1}
                         onClick={() => paginate(currentPage - 1)}
                     >
                         {/* flecha izquierda */}
@@ -106,21 +167,21 @@ const ListPosts = ({ postList }) => {
                     </button>
 
                     {Array.from({ length: totalPages }, (_, index) => index + 1).map(pageNumber => (
-                    <div className=''>
-                        <button 
-                            className={`bg-white outline-none border-[1px] border-l-0 p-2 border-zinc-500 text-wrap w-10 ${currentPage === pageNumber ? 'bg-teal-50 text-teal-600 font-medium' : 'text-zinc-600'}`}
-                            key={pageNumber} 
-                            onClick={() => paginate(pageNumber)}>
-                            {pageNumber}
-                        </button>
-                    </div>
+                        <div className=''>
+                            <button
+                                className={`bg-white outline-none border-[1px] border-l-0 p-2 border-zinc-500 text-wrap w-10 ${currentPage === pageNumber ? 'bg-teal-50 text-teal-600 font-medium' : 'text-zinc-600'}`}
+                                key={pageNumber}
+                                onClick={() => paginate(pageNumber)}>
+                                {pageNumber}
+                            </button>
+                        </div>
                     ))}
 
                     {/* Boton siguiente */}
-                    <button 
-                        className='bg-white outline-none border-1 p-2 rounded-r-md border-[1px] border-l-0 border-zinc-500' 
-                        disabled={currentPage === totalPages} 
-                        onClick={() => paginate(currentPage + 1)}   
+                    <button
+                        className='bg-white outline-none border-1 p-2 rounded-r-md border-[1px] border-l-0 border-zinc-500'
+                        disabled={currentPage === totalPages}
+                        onClick={() => paginate(currentPage + 1)}
                     >
                         {/* flecha derecha */}
                         <svg className='w-4 h-4 text-zinc-600' fill='none' stroke='currentColor' viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'>
