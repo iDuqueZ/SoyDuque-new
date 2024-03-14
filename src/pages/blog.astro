@@ -12,7 +12,7 @@ const postList = await Astro.glob("../pages/post/*.md");
     <div class="max-w-screen-xl md:px-5 mx-auto">
       <section class="mb-6">
         <h1 class="text-4xl md:text-6xl mb-4 font-semibold text-teal-400">
-          Blog
+          Blog <span></span>
         </h1>
         <p>
           Aquí encontraras joyas y otras tantas cosas que me gusta escribir:
@@ -33,3 +33,16 @@ const postList = await Astro.glob("../pages/post/*.md");
     transition: all 0.5s ease-in-out;
   }
 </style>
+
+<script is:inline>
+  window.addEventListener('popstate', function(event) {
+    const url = new URL(window.location.href);
+    const params = new URLSearchParams(url.search);
+    const filter = params.get("filter");
+
+    const $title = document.querySelector("h1 span");
+    if (filter) {
+      $title.textContent = `#${filter}`;
+    }
+  });
+</script>
