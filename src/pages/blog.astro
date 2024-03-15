@@ -7,7 +7,7 @@ const postList = await Astro.glob("../pages/post/*.md");
 ---
 
 <Bloglayout title="Blog" description="Blogs de SoyDuque">
-  <main class="min-h-screen bg-zinc-900 mt-16 text-zinc-100">
+  <main class="min-h-screen bg-zinc-900 mt-20 text-zinc-100 p-3">
     <div class="max-w-screen-xl md:px-5 mx-auto">
       <section class="mb-6">
         <h1 class="text-4xl md:text-6xl mb-4 font-semibold text-teal-400">
@@ -27,8 +27,8 @@ const postList = await Astro.glob("../pages/post/*.md");
 
 <style>
   main {
-    padding: 2rem;
     transition: all 0.5s ease-in-out;
+    margin-bottom: 40px;
   }
 </style>
 

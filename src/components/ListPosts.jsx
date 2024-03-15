@@ -63,28 +63,15 @@ const ListPosts = ({ postList }) => {
 
     return (
         <>
-            <section className='flex gap-6 items-center mb-6'>
-                <div className='filterPost'>
-                    {/* <select
-                        name='filter'
-                        id='filter'
-                        className='filter-select p-2 border-b-2 border-zinc-400 text-zinc-600 accent-teal-500 outline-none text-lg bg-transparent'
-                        onChange={changeFilter}
-                    >
-                        <option value='all'>Todos</option>
-                        <option value='Personal'>Personal</option>
-                        <option value='Work'>Trabajo</option>
-                        <option value='Studies'>Estudios</option>
-                        <option value='StoryTime'>Story Time</option>
-                    </select> */}
-
+            <section className='flex md:flex-row flex-col-reverse gap-2 md:gap-6 items-center mb-6'>
+                <div className='filterPost w-full md:w-auto'>
                     <div className="relative">
                         <button
-                            className="text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                            className="w-full justify-between text-white bg-zinc-700 hover:bg-zinc-800 focus:ring-4 focus:outline-none focus:ring-teal-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
                             type="button"
                             onClick={toggleDropdown}
                         >
-                            Tag
+                            {filterBy === 'all' ? 'Todos' : filterBy}
                             <svg
                                 className={`w-2.5 h-2.5 ms-3 ${isOpen ? 'transform rotate-180' : ''}`}
                                 aria-hidden="true"
@@ -129,7 +116,7 @@ const ListPosts = ({ postList }) => {
                     <input
                         id='searchBar'
                         name='search'
-                        className='w-full p-2 outline-none border-b-2 border-zinc-400 text-zinc-600 text-lg bg-transparent'
+                        className='w-full p-2 outline-none border-b-2 border-zinc-400 text-zinc-200 text-lg bg-transparent'
                         type='search'
                         placeholder='Buscar Por Titulo...'
                         onChange={(e) => setSearchPost(e.target.value)}

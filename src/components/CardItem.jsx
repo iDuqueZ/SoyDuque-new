@@ -20,12 +20,12 @@ const AstroComponent = ({ url, imageUrl, title, date, autor, tags }) => {
             />
           </div>
 
-          <div className="p-4">
+          <div className="p-4 w-full md:w-[80%]">
             <h2 className="text-2xl text-zinc-100 group-hover:text-teal-400 underline-offset-4 group-hover:underline group-hover:decoration-dashed font-semibold mb-2">{title}</h2>
             <p className="text-sm text-zinc-400 mb-2">{autor}</p>
             <span className="text-sm text-zinc-400">{fechaFormateada}</span>
 
-            <div className="flex md:flex-wrap mt-4 h-[35px] md:h-auto overflow-hidden">
+            <div className="flex md:flex-wrap mt-4 h-[35px] md:h-auto overflow-x-scroll overflow-y-hidden w-[85vw] items-center tags">
               {tags.map((tag, index) => (
                 <span
                   key={index}
