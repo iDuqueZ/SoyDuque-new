@@ -1,0 +1,91 @@
+---
+// This is the layout for the entire site
+import { ViewTransitions } from 'astro:transitions';
+//Import the Navbar component
+import Navbar from "../components/Navbar.astro";
+
+//Import the Footer component
+import Footer from "../components/Footer.astro";
+
+//Import fuente
+import '@fontsource/shadows-into-light-two';
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="description" content={description} />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+
+  <body>
+    <Navbar />
+    <slot />
+    <Footer />
+  </body>
+
+  <style is:global>
+
+    html {
+      color-scheme: light dark;
+    }
+
+    body {
+      @apply bg-zinc-900;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: IBM Plex Mono,monospace;
+    }
+
+    *::selection {
+      background-color: #1f1f1f;
+      color: #ffff;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ::-webkit-scrollbar {
+      border-radius: 10px;
+      width: 5px;
+      height: 0px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+      background-color: #ebebeb;
+      background-clip: content-box;
+      /* border: 2px solid #0000; */
+      border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+      background: #1f1f1f;
+    }
+
+    ::-webkit-scrollbar-corner {
+      background: #1f1f1f;
+    }
+  </style>
+</html>
