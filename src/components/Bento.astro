@@ -1,0 +1,96 @@
+<section>
+  <div class="parent mt-10">
+    <div class="div1">
+      <h3 class="bg-gradient-to-l from-purple-400 to-teal-400 bg-clip-text inline-block text-transparent">Desarrollo Web Personalizado</h3>
+      <p>
+        Me especializo en crear soluciones web a medida para satisfacer las
+        necesidades específicas de mis clientes. Desde el diseño inicial hasta
+        la implementación y el mantenimiento continuo, me aseguro de ofrecer una
+        experiencia única y adaptada a los requisitos del usuario final.
+      </p>
+    </div>
+    <div class="div2">
+      <h3 class="bg-gradient-to-l from-purple-400 to-pink-400 bg-clip-text inline-block text-transparent">Diseño UX/UI</h3>
+      <p>
+        Soy un apasionado del diseño centrado en el usuario. Utilizo técnicas de investigación y prototipado para diseñar experiencias de usuario intuitivas y interfaces atractiva
+      </p>
+    </div>
+    <div class="div3">
+      <h3 class="bg-gradient-to-l from-red-400 to-orange-400 bg-clip-text inline-block text-transparent">Certificado como Desarrollador SCRUM</h3>
+      <p>
+        Las metodologías agiles son de gran popular en el desarrollo de software actual y como desarrollador certificado SCRUM, puedo ayudarte a implementar estas metodologías en tu equipo de desarrollo.
+      </p>
+    </div>
+    <div class="div4">
+      <h3 class="bg-gradient-to-l from-green-400 to-teal-400 bg-clip-text inline-block text-transparent">Back-end y Analisis de Datos</h3>
+      <p>
+        Como desarrollador backend me encargo de desarrollar APIs e implementar la logica necesaria para tu negocio y Como analista de datos, me especializo en extraer, transformar y analizar datos generados por aplicaciones web.
+      </p>
+    </div>
+    <div class="div5">
+      <h3 class="bg-gradient-to-l from-lime-400 to-yellow-400 bg-clip-text inline-block text-transparent">Front End</h3>
+      <p>
+        Me encanta crear experiencias web atractivas y funcionales utilizando las últimas tecnologías de frontend como HTML, CSS y JavaScript. Tengo experiencia trabajando con frameworks como React.js, Angular y Vue.js para desarrollar interfaces de usuario dinámicas e interactivas.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .parent {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 10px;
+    grid-row-gap: 10px;
+    background: rgb(195,194,222);
+    background: radial-gradient(circle, rgba(195,194,222,0.8) 0%, rgba(159,159,208,0.4) 10%, rgba(47, 47, 47, 0) 100%);
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  @media (max-width: 768px) {
+    .parent {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(5, 1fr);
+    }
+    .parent > div {
+      grid-area: auto;
+    }
+  }
+
+  .parent > div {
+    @apply p-4 rounded-md border-[0.5px] border-zinc-700 bg-zinc-800 flex flex-col justify-between text-[0.8rem];
+  }
+
+  .parent > div h3 {
+    @apply text-2xl font-bold;
+  }
+
+  .div1 {
+    grid-area: 1 / 1 / 4 / 4;
+    /* @apply shadow-lg shadow-blue-400; */
+    /* box-shadow: 0 0 10px 0.5px #5c92ff; */
+  }
+  .div2 {
+    grid-area: 1 / 4 / 3 / 7;
+    /* @apply shadow-lg shadow-purple-400; */
+  }
+  .div3 {
+    grid-area: 4 / 1 / 6 / 4;
+    background-image: url('https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2022-09/asset_39psd.png');
+    background-size: 60px;
+    background-repeat: no-repeat;
+    background-position: bottom 40px right -15px;
+    /* @apply shadow-lg shadow-orange-400; */
+  }
+  .div4 {
+    grid-area: 3 / 4 / 6 / 7;
+    /* @apply shadow-lg shadow-green-400; */
+  }
+  .div5 {
+    grid-area: 1 / 7 / 6 / 9;
+    /* @apply shadow-lg shadow-yellow-400; */
+  }
+</style>

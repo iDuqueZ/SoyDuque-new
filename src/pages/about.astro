@@ -1,5 +1,6 @@
 ---
 import AboutLayout from "../layouts/AboutLayout.astro";
+import Bento from "../components/Bento.astro";
 
 const description = "Sobre mi";
 ---
@@ -93,90 +94,7 @@ const description = "Sobre mi";
       </div>
     </section>
 
-    <section>
-      <div class="parent mt-10">
-        <div class="div1">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div2">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div3">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div4">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div5">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div6">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div7">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-        <div class="div8">
-          <h3>Desarrollo Web Personalizado</h3>
-          <p>
-            Me especializo en crear soluciones web a medida para satisfacer las
-            necesidades específicas de mis clientes. Desde el diseño inicial
-            hasta la implementación y el mantenimiento continuo, me aseguro de
-            ofrecer una experiencia única y adaptada a los requisitos del
-            usuario final.
-          </p>
-        </div>
-      </div>
-    </section>
+    <Bento />
   </main>
 </AboutLayout>
 
@@ -189,54 +107,4 @@ const description = "Sobre mi";
         filter: drop-shadow(0 0 0.2rem rgb(121, 255, 255));
     } */
 
-  .parent {
-    display: grid;
-    grid-template-columns: repeat(8, 1fr);
-    grid-template-rows: repeat(6, 1fr);
-    grid-column-gap: 10px;
-    grid-row-gap: 10px;
-  }
-
-  @media (max-width: 768px) {
-    .parent {
-      grid-template-columns: repeat(1, 1fr);
-      grid-template-rows: repeat(8, 1fr);
-    }
-    .parent > div {
-      grid-area: auto;
-    }
-  }
-
-  .parent > div {
-    @apply p-4 rounded-md border-[0.5px] border-zinc-700 bg-zinc-800;
-  }
-
-  .parent > div h3 {
-    @apply text-2xl font-bold;
-  }
-
-  .div1 {
-    grid-area: 1 / 7 / 3 / 9;
-  }
-  .div2 {
-    grid-area: 1 / 1 / 5 / 4;
-  }
-  .div3 {
-    grid-area: 5 / 1 / 7 / 4;
-  }
-  .div4 {
-    grid-area: 1 / 4 / 3 / 7;
-  }
-  .div5 {
-    grid-area: 3 / 4 / 5 / 6;
-  }
-  .div6 {
-    grid-area: 3 / 6 / 5 / 9;
-  }
-  .div7 {
-    grid-area: 5 / 4 / 7 / 7;
-  }
-  .div8 {
-    grid-area: 5 / 7 / 7 / 9;
-  }
 </style>
