@@ -106,7 +106,7 @@
   }
 
   .div4 img{
-    filter: drop-shadow(0 0 2rem rgb(200, 255, 200));
+    filter: drop-shadow(0 0 1rem rgba(200, 255, 200, 0.747));
   }
 
   .div5 img{
@@ -220,17 +220,19 @@
 </style>
 
 <script is:inline>
-  const syncPointer = ({ x, y }) => {
-    document.documentElement.style.setProperty('--x', x.toFixed(2))
-    document.documentElement.style.setProperty(
-      '--xp',
-      (x / window.innerWidth).toFixed(2)
-    )
-    document.documentElement.style.setProperty('--y', y.toFixed(2))
-    document.documentElement.style.setProperty(
-      '--yp',
-      (y / window.innerHeight).toFixed(2)
-    )
-  }
-  document.body.addEventListener('pointermove', syncPointer)
+  document.addEventListener('astro:page-load', () => {
+    const syncPointer = ({ x, y }) => {
+      document.documentElement.style.setProperty('--x', x.toFixed(2))
+      document.documentElement.style.setProperty(
+        '--xp',
+        (x / window.innerWidth).toFixed(2)
+      )
+      document.documentElement.style.setProperty('--y', y.toFixed(2))
+      document.documentElement.style.setProperty(
+        '--yp',
+        (y / window.innerHeight).toFixed(2)
+      )
+    }
+    document.body.addEventListener('pointermove', syncPointer)
+  });
 </script>

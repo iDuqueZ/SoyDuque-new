@@ -1,6 +1,7 @@
 ---
 import AboutLayout from "../layouts/AboutLayout.astro";
 import Bento from "../components/Bento.astro";
+import Card from "../components/Card.astro";
 
 const description = "Sobre mi";
 ---
@@ -16,7 +17,9 @@ const description = "Sobre mi";
         />
       </div>
       <div>
-        <h1 class="text-4xl font-bold mb-2 md:text-left text-center">Ivan D Duque Correa</h1>
+        <h1 class="text-4xl font-bold mb-2 md:text-left text-center">
+          Ivan D Duque Correa
+        </h1>
         <p class="md:text-lg text-md mb-4 md:text-left text-center">
           Ingeniero Informático y Desarrollador web
         </p>
@@ -95,6 +98,62 @@ const description = "Sobre mi";
     </section>
 
     <Bento />
+
+    <section class="mt-12 mb-60">
+      <div class="flex gap-6 mx-auto">
+        <div class="felx flex-col items-center">
+          <div class="mb-2 text-2xl shadow-green-200">
+            <svg
+              class="text-green-400 brightness-110"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="fill: rgb(121, 255, 121);transform: ;msFilter:;"
+              ><path
+                d="M19 2H6c-1.206 0-3 .799-3 3v14c0 2.201 1.794 3 3 3h15v-2H6.012C5.55 19.988 5 19.806 5 19s.55-.988 1.012-1H21V4c0-1.103-.897-2-2-2zm0 14H5V5c0-.806.55-.988 1-1h13v12z"
+              ></path></svg
+            >
+          </div>
+          <!-- Linea gradient -->
+          <div
+            class="h-[80%] w-1 mx-auto gradiente-sobremi bg-gradient-to-b from-green-500 from-20% via-lime-500 via-60%"
+          >
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Experiencia</h2>
+          <p class="text-lg mb-4">Ultimos cargos que he desempeñado:</p>
+
+          <div class="flex gap-4">
+            <Card header="NAUTISERVICIOS S.A.S" title="Auxiliar de TI" date="Mar 2023 - Actualidad" glow="120">
+              <ul>
+                <li>• Soporte TI a más de 5 sedes nacionales.</li>
+                <li>• Desarrolle un sistema para le gestión de incidentes de tecnología de la organización</li>
+                <li>• Optimice y mejore el rendimiento de los activos de tecnología en todas las sedes.</li>
+              </ul>
+            </Card>
+
+            <Card header="Epartner" title="Web Master - FrontEnd" date="Ago 2022 - Nov 2022" glow="120">
+              <ul>
+                <li>• Como Web Master en Epartner, lidero la gestión de contenido para tiendas virtuales en VTEX.</li>
+                <li>• Manejo HTML, CSS, JavaScript, SQL y ApiRest para garantizar la funcionalidad de las tiendas.</li>
+                <li>• Administré y optimice procesos de consulta utilizando PL/SQL para las tiendas.</li>
+                <li>• Maqueto contenido web, asegurando atractivo visual y funcionalidad para marcas como <b>Arturo Calle, Bata, Reccamier, Co-exito. </b></li>
+              </ul>
+            </Card>
+
+            <Card header="Grupo Centinelas 113" title="Lider de Proyecto y Desarrollador" date="Ago 2022 - Dic 2022" glow="120">
+              <ul>
+                <li>• Lidereé como Gerente de Proyecto, desempeñando roles duales de Product Owner y Scrum Master.</li>
+                <li>• Realicé seguimiento al plan de trabajo y definí claramente el plan de entregables.</li>
+                <li>• Definí la arquitectura y tecnologias a utilizar en el desarrollo del proyecto PWA</li>
+              </ul>
+            </Card>
+          </div>
+
+        </div>
+      </div>
+    </section>
   </main>
 </AboutLayout>
 
@@ -103,8 +162,7 @@ const description = "Sobre mi";
     filter: drop-shadow(0 0 0.4rem rgb(121, 255, 255));
   }
 
-  /* div .shadow-cyan-100 {
-        filter: drop-shadow(0 0 0.2rem rgb(121, 255, 255));
-    } */
-
+  div .shadow-green-200 {
+    filter: drop-shadow(0 0 0.4rem rgb(121, 255, 121));
+  }
 </style>
