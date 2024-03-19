@@ -1,7 +1,8 @@
 <section>
   <div class="parent mt-10">
-    <div class="div1">
+    <div data-glow class="div1">
       <h3 class="bg-gradient-to-l from-purple-400 to-teal-400 bg-clip-text inline-block text-transparent">Desarrollo Web Personalizado</h3>
+      <img class="mx-auto" src="/dev-web.svg" alt="Desarrollo web" width="300px">
       <p>
         Me especializo en crear soluciones web a medida para satisfacer las
         necesidades específicas de mis clientes. Desde el diseño inicial hasta
@@ -9,26 +10,31 @@
         experiencia única y adaptada a los requisitos del usuario final.
       </p>
     </div>
-    <div class="div2">
+    <div data-glow  class="div2">
       <h3 class="bg-gradient-to-l from-purple-400 to-pink-400 bg-clip-text inline-block text-transparent">Diseño UX/UI</h3>
+      <img class="mx-auto" src="/desing.svg" alt="Diseño UX/UI" width="300px">
       <p>
         Soy un apasionado del diseño centrado en el usuario. Utilizo técnicas de investigación y prototipado para diseñar experiencias de usuario intuitivas y interfaces atractiva
       </p>
     </div>
-    <div class="div3">
-      <h3 class="bg-gradient-to-l from-red-400 to-orange-400 bg-clip-text inline-block text-transparent">Certificado como Desarrollador SCRUM</h3>
-      <p>
+    <div data-glow  class="div3">
+      <h3 class="bg-gradient-to-l from-red-400 to-orange-400 bg-clip-text inline-block text-transparent">Certificado como <br>Desarrollador SCRUM</h3>
+      <img class="mx-auto" src="/scrum.svg" alt="Diseño UX/UI" width="380px">
+      <p> 
         Las metodologías agiles son de gran popular en el desarrollo de software actual y como desarrollador certificado SCRUM, puedo ayudarte a implementar estas metodologías en tu equipo de desarrollo.
       </p>
     </div>
-    <div class="div4">
+    <div data-glow  class="div4"> 
       <h3 class="bg-gradient-to-l from-green-400 to-teal-400 bg-clip-text inline-block text-transparent">Back-end y Analisis de Datos</h3>
+      <img class="mx-auto" src="/backend.svg" alt="Diseño UX/UI" width="300px">
       <p>
         Como desarrollador backend me encargo de desarrollar APIs e implementar la logica necesaria para tu negocio y Como analista de datos, me especializo en extraer, transformar y analizar datos generados por aplicaciones web.
       </p>
     </div>
-    <div class="div5">
+    <div data-glow  class="div5">
       <h3 class="bg-gradient-to-l from-lime-400 to-yellow-400 bg-clip-text inline-block text-transparent">Front End</h3>
+      <img class="mx-auto hidden md:block" src="/frontend.svg" alt="Front End" width="200px">
+      <img class="mx-auto md:hidden" src="/frontend-mobile.svg" alt="Front End" width="300px">
       <p>
         Me encanta crear experiencias web atractivas y funcionales utilizando las últimas tecnologías de frontend como HTML, CSS y JavaScript. Tengo experiencia trabajando con frameworks como React.js, Angular y Vue.js para desarrollar interfaces de usuario dinámicas e interactivas.
       </p>
@@ -43,11 +49,6 @@
     grid-template-rows: repeat(5, 1fr);
     grid-column-gap: 10px;
     grid-row-gap: 10px;
-    background: rgb(195,194,222);
-    background: radial-gradient(circle, rgba(195,194,222,0.8) 0%, rgba(159,159,208,0.4) 10%, rgba(47, 47, 47, 0) 100%);
-    background-size: 50% 50%;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   @media (max-width: 768px) {
@@ -61,7 +62,7 @@
   }
 
   .parent > div {
-    @apply p-4 rounded-md border-[0.5px] border-zinc-700 bg-zinc-800 flex flex-col justify-between text-[0.8rem];
+    @apply p-4 rounded-md border-[0.5px] border-zinc-700 bg-zinc-800 flex flex-col justify-between text-[0.8rem] relative gap-6;
   }
 
   .parent > div h3 {
@@ -70,27 +71,166 @@
 
   .div1 {
     grid-area: 1 / 1 / 4 / 4;
+    --base: 220;
     /* @apply shadow-lg shadow-blue-400; */
     /* box-shadow: 0 0 10px 0.5px #5c92ff; */
   }
+
+  .div1 img{
+    filter: drop-shadow(0 0 1rem rgb(200, 255, 255));
+  }
+
   .div2 {
     grid-area: 1 / 4 / 3 / 7;
+    --base: 320;
     /* @apply shadow-lg shadow-purple-400; */
   }
+
+  .div2 img{
+    filter: drop-shadow(0 0 1rem rgb(255, 200, 255));
+  }
+
   .div3 {
     grid-area: 4 / 1 / 6 / 4;
-    background-image: url('https://scrumorg-website-prod.s3.amazonaws.com/drupal/inline-images/2022-09/asset_39psd.png');
-    background-size: 60px;
-    background-repeat: no-repeat;
-    background-position: bottom 40px right -15px;
+    --base: 10;
     /* @apply shadow-lg shadow-orange-400; */
+  }
+
+  .div3 img { 
+    filter: drop-shadow(0 0 1rem rgb(255, 225, 200));
   }
   .div4 {
     grid-area: 3 / 4 / 6 / 7;
+    --base: 160;
     /* @apply shadow-lg shadow-green-400; */
   }
+
+  .div4 img{
+    filter: drop-shadow(0 0 2rem rgb(200, 255, 200));
+  }
+
+  .div5 img{
+    filter: drop-shadow(0 0 1rem rgb(255, 255, 200));
+  }
+
   .div5 {
     grid-area: 1 / 7 / 6 / 9;
+    --base: 400;
     /* @apply shadow-lg shadow-yellow-400; */
   }
+
+  :root {
+    --backdrop: hsl(0 0% 60% / 0.12);
+    --radius: 10;
+    --border: 2;
+    --backup-border: var(--backdrop);
+    --size: 100;
+  }
+
+  /* Glow specific styles */
+  [data-glow] {
+    --border-size: calc(var(--border, 2) * 1px);
+    --spotlight-size: calc(var(--size, 150) * 1px);
+    --hue: calc(var(--base) + (var(--xp, 0) * var(--spread, 0)));
+    background-image: radial-gradient(
+      var(--spotlight-size) var(--spotlight-size) at
+      calc(var(--x, 0) * 1px)
+      calc(var(--y, 0) * 1px),
+      hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 70) * 1%) / var(--bg-spot-opacity, 0.1)), transparent
+    );
+    background-color: var(--backdrop, transparent);
+    background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+    background-position: 50% 50%;
+    background-attachment: fixed;
+    border: var(--border-size) solid var(--backup-border);
+    position: relative;
+    touch-action: none;
+  }
+
+  [data-glow]::before,
+  [data-glow]::after {
+    pointer-events: none;
+    content: "";
+    position: absolute;
+    inset: calc(var(--border-size) * -1);
+    border: var(--border-size) solid transparent;
+    border-radius: calc(var(--radius) * 1px);
+    background-attachment: fixed;
+    background-size: calc(100% + (2 * var(--border-size))) calc(100% + (2 * var(--border-size)));
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    mask:
+      linear-gradient(transparent, transparent),
+      linear-gradient(white, white);
+    mask-clip: padding-box, border-box;
+    mask-composite: intersect;
+  }
+
+  /* This is the emphasis light */
+  [data-glow]::before {
+    background-image: radial-gradient(
+      calc(var(--spotlight-size) * 0.75) calc(var(--spotlight-size) * 0.75) at
+      calc(var(--x, 0) * 1px)
+      calc(var(--y, 0) * 1px),
+      hsl(var(--hue, 210) calc(var(--saturation, 100) * 1%) calc(var(--lightness, 50) * 1%) / var(--border-spot-opacity, 1)), transparent 100%
+    );
+    filter: brightness(2);
+  }
+  /* This is the spotlight */
+  [data-glow]::after {
+    background-image: radial-gradient(
+      calc(var(--spotlight-size) * 0.5) calc(var(--spotlight-size) * 0.5) at
+      calc(var(--x, 0) * 1px)
+      calc(var(--y, 0) * 1px),
+      hsl(0 100% 100% / var(--border-light-opacity, 1)), transparent 100%
+    );
+  }
+  [data-glow] [data-glow] {
+    position: absolute;
+    inset: 0;
+    will-change: filter;
+    opacity: var(--outer, 1);
+  }
+  [data-glow] > [data-glow] {
+    border-radius: calc(var(--radius) * 1px);
+    border-width: calc(var(--border-size) * 20);
+    filter: blur(calc(var(--border-size) * 10));
+    background: none;
+    pointer-events: none;
+  }
+  [data-glow] > [data-glow]::before {
+    inset: -10px;
+    border-width: 10px;
+  }
+  [data-glow] [data-glow] {
+    border: none;
+  }
+  [data-glow] :is(a, button) {
+    border-radius: calc(var(--radius) * 1px);
+    border: var(--border-size) solid transparent;
+  }
+  [data-glow] :is(a, button) [data-glow] {
+    background: none;
+  }
+  [data-glow] :is(a, button) [data-glow]::before {
+    inset: calc(var(--border-size) * -1);
+    border-width: calc(var(--border-size) * 1);
+  }
+
 </style>
+
+<script is:inline>
+  const syncPointer = ({ x, y }) => {
+    document.documentElement.style.setProperty('--x', x.toFixed(2))
+    document.documentElement.style.setProperty(
+      '--xp',
+      (x / window.innerWidth).toFixed(2)
+    )
+    document.documentElement.style.setProperty('--y', y.toFixed(2))
+    document.documentElement.style.setProperty(
+      '--yp',
+      (y / window.innerHeight).toFixed(2)
+    )
+  }
+  document.body.addEventListener('pointermove', syncPointer)
+</script>
