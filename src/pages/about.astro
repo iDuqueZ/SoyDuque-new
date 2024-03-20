@@ -3,6 +3,7 @@ import AboutLayout from "../layouts/AboutLayout.astro";
 import Bento from "../components/Bento.astro";
 import Card from "../components/Card.astro";
 import CarruselFront from "../components/CarruselFront.jsx";
+import CarruselBack from "../components/CarruselBack.jsx";
 
 const description = "Sobre mi";
 ---
@@ -38,7 +39,7 @@ const description = "Sobre mi";
                   height="16"
                   stroke-linejoin="round"
                   viewBox="0 0 16 16"
-                  width="16"
+                  width="16" 
                   style="color: currentcolor;"
                   ><g clip-path="url(#clip0_872_3147)">
                     <path
@@ -125,7 +126,7 @@ const description = "Sobre mi";
           <h2 class="text-2xl font-bold mb-4">Experiencia</h2>
           <p class="text-lg mb-4">Ultimos cargos que he desempeñado:</p>
 
-          <div class="flex gap-4">
+          <div class="flex md:flex-row flex-col gap-4">
             <Card
               header="NAUTISERVICIOS S.A.S"
               title="Auxiliar de TI"
@@ -223,12 +224,14 @@ const description = "Sobre mi";
         <div>
           <h2 class="text-2xl font-bold mb-4">Tecnologías</h2>
           <h3 class="text-lg mb-4">FrontEnd</h3>
-          <div class="carrusel max-w-[1196px] h-[100px] relative">
+          <div class="carrusel w-[80vw] md:max-w-[1196px] h-[100px] relative pr-5">
             <CarruselFront client:load/>
           </div>
 
-          <h3 class="text-lg mb-4">BackEnd</h3>
-          <div></div>
+          <h3 class="text-lg mb-4 mt-6">BackEnd</h3>
+          <div class="carrusel w-[80vw] md:max-w-[1196px] h-[100px] relative pr-5">
+            <CarruselBack client:load/>
+          </div>
         </div>
       </div>
     </section>
@@ -249,4 +252,5 @@ const description = "Sobre mi";
   div .shadow-pink-200 {
     filter: drop-shadow(0 0 0.4rem rgb(255, 121, 255));
   }
+  
 </style>
