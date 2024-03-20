@@ -2,6 +2,7 @@
 import AboutLayout from "../layouts/AboutLayout.astro";
 import Bento from "../components/Bento.astro";
 import Card from "../components/Card.astro";
+import CarruselFront from "../components/CarruselFront.jsx";
 
 const description = "Sobre mi";
 ---
@@ -99,7 +100,7 @@ const description = "Sobre mi";
 
     <Bento />
 
-    <section class="mt-12 mb-60">
+    <section class="mt-12 mb-10">
       <div class="flex gap-6 mx-auto">
         <div class="felx flex-col items-center">
           <div class="mb-2 text-2xl shadow-green-200">
@@ -125,32 +126,109 @@ const description = "Sobre mi";
           <p class="text-lg mb-4">Ultimos cargos que he desempeñado:</p>
 
           <div class="flex gap-4">
-            <Card header="NAUTISERVICIOS S.A.S" title="Auxiliar de TI" date="Mar 2023 - Actualidad" glow="120">
+            <Card
+              header="NAUTISERVICIOS S.A.S"
+              title="Auxiliar de TI"
+              date="Mar 2023 - Actualidad"
+              glow="120"
+            >
               <ul>
                 <li>• Soporte TI a más de 5 sedes nacionales.</li>
-                <li>• Desarrolle un sistema para le gestión de incidentes de tecnología de la organización</li>
-                <li>• Optimice y mejore el rendimiento de los activos de tecnología en todas las sedes.</li>
+                <li>
+                  • Desarrolle un sistema para le gestión de incidentes de
+                  tecnología de la organización
+                </li>
+                <li>
+                  • Optimice y mejore el rendimiento de los activos de
+                  tecnología en todas las sedes.
+                </li>
               </ul>
             </Card>
 
-            <Card header="Epartner" title="Web Master - FrontEnd" date="Ago 2022 - Nov 2022" glow="120">
+            <Card
+              header="Epartner"
+              title="Web Master - FrontEnd"
+              date="Ago 2022 - Nov 2022"
+              glow="120"
+            >
               <ul>
-                <li>• Como Web Master en Epartner, lidero la gestión de contenido para tiendas virtuales en VTEX.</li>
-                <li>• Manejo HTML, CSS, JavaScript, SQL y ApiRest para garantizar la funcionalidad de las tiendas.</li>
-                <li>• Administré y optimice procesos de consulta utilizando PL/SQL para las tiendas.</li>
-                <li>• Maqueto contenido web, asegurando atractivo visual y funcionalidad para marcas como <b>Arturo Calle, Bata, Reccamier, Co-exito. </b></li>
+                <li>
+                  • Como Web Master en Epartner, lidero la gestión de contenido
+                  para tiendas virtuales en VTEX.
+                </li>
+                <li>
+                  • Manejo HTML, CSS, JavaScript, SQL y ApiRest para garantizar
+                  la funcionalidad de las tiendas.
+                </li>
+                <li>
+                  • Administré y optimice procesos de consulta utilizando PL/SQL
+                  para las tiendas.
+                </li>
+                <li>
+                  • Maqueto contenido web, asegurando atractivo visual y
+                  funcionalidad para marcas como <b
+                    >Arturo Calle, Bata, Reccamier, Co-exito.
+                  </b>
+                </li>
               </ul>
             </Card>
 
-            <Card header="Grupo Centinelas 113" title="Lider de Proyecto y Desarrollador" date="Ago 2022 - Dic 2022" glow="120">
+            <Card
+              header="Grupo Centinelas 113"
+              title="Lider de Proyecto y Desarrollador"
+              date="Ago 2022 - Dic 2022"
+              glow="120"
+            >
               <ul>
-                <li>• Lidereé como Gerente de Proyecto, desempeñando roles duales de Product Owner y Scrum Master.</li>
-                <li>• Realicé seguimiento al plan de trabajo y definí claramente el plan de entregables.</li>
-                <li>• Definí la arquitectura y tecnologias a utilizar en el desarrollo del proyecto PWA</li>
+                <li>
+                  • Lidereé como Gerente de Proyecto, desempeñando roles duales
+                  de Product Owner y Scrum Master.
+                </li>
+                <li>
+                  • Realicé seguimiento al plan de trabajo y definí claramente
+                  el plan de entregables.
+                </li>
+                <li>
+                  • Definí la arquitectura y tecnologias a utilizar en el
+                  desarrollo del proyecto PWA
+                </li>
               </ul>
             </Card>
           </div>
+        </div>
+      </div>
+    </section>
 
+    <section class="mt-12 mb-40">
+      <div class="flex gap-6 mx-auto">
+        <div class="felx flex-col items-center">
+          <div class="mb-2 text-2xl shadow-pink-200">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              style="fill: rgb(255, 121, 255);transform: ;msFilter:;"
+              ><path
+                d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"
+              ></path></svg
+            >
+          </div>
+          <!-- Linea gradient -->
+          <div
+            class="h-[80%] w-1 mx-auto gradiente-sobremi bg-gradient-to-b from-pink-500 from-20% via-purple-500 via-60%"
+          >
+          </div>
+        </div>
+        <div>
+          <h2 class="text-2xl font-bold mb-4">Tecnologías</h2>
+          <h3 class="text-lg mb-4">FrontEnd</h3>
+          <div class="carrusel max-w-[1196px] h-[100px] relative">
+            <CarruselFront client:load/>
+          </div>
+
+          <h3 class="text-lg mb-4">BackEnd</h3>
+          <div></div>
         </div>
       </div>
     </section>
@@ -158,11 +236,17 @@ const description = "Sobre mi";
 </AboutLayout>
 
 <style>
+
+
   div .shadow-cyan-200 {
     filter: drop-shadow(0 0 0.4rem rgb(121, 255, 255));
   }
 
   div .shadow-green-200 {
     filter: drop-shadow(0 0 0.4rem rgb(121, 255, 121));
+  }
+
+  div .shadow-pink-200 {
+    filter: drop-shadow(0 0 0.4rem rgb(255, 121, 255));
   }
 </style>
