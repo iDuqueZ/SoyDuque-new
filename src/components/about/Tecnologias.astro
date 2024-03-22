@@ -1,0 +1,49 @@
+---
+import CarruselFront from "../CarruselFront.jsx";
+import CarruselBack from "../CarruselBack.jsx";
+---
+
+<section class="mt-12 w-full">
+  <div class="flex gap-6 mx-auto w-full">
+    <div class="felx flex-col items-center">
+      <div class="mb-2 text-2xl shadow-pink-200">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          style="fill: rgb(255, 121, 255);transform: ;msFilter:;"
+          ><path
+            d="m7.375 16.781 1.25-1.562L4.601 12l4.024-3.219-1.25-1.562-5 4a1 1 0 0 0 0 1.562l5 4zm9.25-9.562-1.25 1.562L19.399 12l-4.024 3.219 1.25 1.562 5-4a1 1 0 0 0 0-1.562l-5-4zm-1.649-4.003-4 18-1.953-.434 4-18z"
+          ></path></svg
+        >
+      </div>
+      <!-- Linea gradient -->
+      <div
+        class="h-[80%] w-1 mx-auto gradiente-sobremi bg-gradient-to-b from-pink-500 from-20% via-purple-500 via-60%"
+      >
+      </div>
+    </div>
+    <div class="flex flex-col content-tecno">
+      <h2 class="text-2xl font-bold mb-4">Tecnologías</h2>
+      <h3 class="text-lg mb-4">FrontEnd</h3>
+      <div class="carrusel h-[100px] relative pr-5">
+        <CarruselFront client:load />
+      </div>
+
+      <h3 class="text-lg mb-4 mt-6">BackEnd</h3>
+      <div class="carrusel h-[100px] relative pr-5">
+        <CarruselBack client:load />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .content-tecno {
+    width: calc(100% - 24px);
+  }
+  div .shadow-pink-200 {
+    filter: drop-shadow(0 0 0.4rem rgb(255, 121, 255));
+  }
+</style>
