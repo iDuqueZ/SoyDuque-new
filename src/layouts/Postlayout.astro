@@ -13,15 +13,17 @@ const fechaFormateada = format(dateObj, 'dd/MMM/yyyy', { locale: es });
 
 <Bloglayout title={frontmatter.title} description={frontmatter.description}>
 
-  <main class="flex flex-row mx-auto mb-16 max-w-5xl mt-20 gap-6 md:p-6 p-3">
+  <main class="flex flex-col mx-auto mb-16 max-w-5xl mt-20 gap-6 md:p-6 p-3">
+    <!-- Boton atras -->
+    <div class="mx-auto w-full max-w-[860px] flex">
+      <a href="/blog" class="flex items-center gap-2 mb-6 text-neutral-500 hover:text-neutral-700">
+        <svg  width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(88, 88, 88);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
+        Volver al blog
+      </a>
+    </div>
       <article class="mx-auto">
         <div class="max-w-[860px] mx-auto">
 
-          <!-- Boton atras -->
-          <a href="/blog" class="flex items-center gap-2 mb-6 text-neutral-500 hover:text-neutral-700">
-            <svg  width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(88, 88, 88);transform: ;msFilter:;"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z"></path></svg>
-            Volver al blog
-          </a>
 
           <h1 class="text-6xl text-teal-400 font-semibold mb-4">{frontmatter.title}</h1>
           <div class="flex md:flex-wrap mt-4 mb-4 h-[35px] md:h-auto overflow-hidden">

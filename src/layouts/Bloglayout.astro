@@ -93,6 +93,10 @@ const { title, description } = Astro.props;
       font-family: IBM Plex Mono,monospace;
     }
 
+    article *{
+      @apply text-lg text-pretty text-neutral-200;
+    }
+    
     article h2 {
       color: #ffff;
       padding-bottom: 0.3em;
@@ -106,7 +110,45 @@ const { title, description } = Astro.props;
 
     article  p{
         @apply text-lg mb-4 text-pretty text-neutral-200;
-      }
+    }
 
+    article ul {
+      @apply list-disc list-inside mb-2
+    }
+
+    article ul li {
+      @apply mb-4
+    }
+
+    article ul li ul  {
+      list-style: circle;
+      @apply list-inside pl-6 mb-1 mt-3;
+    }
+
+    article ul li ul li {
+      @apply mb-1
+    }
+
+    article p img {
+      margin: 0 auto;
+      max-height: 80vh;
+    }
+    
+    article :not(pre) > code {
+        display: inline-block;
+        padding: 0.2em 0.4em;
+        margin: 0;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 0.9em;
+        color: #e1e4e8;
+        background-color: #24292e;
+        border: 1px solid #181a1d;
+        border-radius: 3px;
+        white-space: pre-wrap;
+    }  
+
+    article pre {
+      @apply p-2 my-2;
+    }
   </style>
 </html>

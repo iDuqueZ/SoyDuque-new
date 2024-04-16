@@ -8,7 +8,7 @@ import 'swiper/css/navigation';
 import '../styles.css';
 
 // import required modules
-import { Navigation } from 'swiper/modules';
+import { Navigation, Autoplay } from 'swiper/modules';
 
 export default function App() {
   return (
@@ -29,9 +29,13 @@ export default function App() {
             spaceBetween: 10,
           },
         }}
+        autoplay={{
+          delay: 2500,
+          disableOnInteraction: false,
+        }}
         loop={true}
         navigation={true}
-        modules={[Navigation]}
+        modules={[Navigation, Autoplay]}
         className="mySwiper"
       >
         <SwiperSlide>
