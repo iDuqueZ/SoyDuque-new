@@ -7,7 +7,7 @@ author: 'Ivan D Duque ft Juan Jose Mora | Meritxel Gonzales | Lucia'
 image:
     url: '/post/Viaje-Ecuador.jpeg'
     alt: 'Foto del Viaje'
-tags: ["StoryTime", "Anécdota"]
+tags: ["StoryTime"]
 ---
 
 Este artículo o blog cuenta mi experiencia saliendo por primera vez de Colombia en un viaje maravilloso al país de Ecuador para conocer a dos personitas que amo mucho: a dos de mis amigas que, a pesar de hablar siempre por medios digitales, las siento tan cercanas como cualquier otra que haya conocido hace mucho en persona. Y es que, aunque el contacto humano es hermoso, las secuelas de la pandemia nos dejan ver que en la distancia también hay momentos conmemorables.

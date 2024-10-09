@@ -7,7 +7,7 @@ author: 'Ivan D Duque'
 image:
     url: '/post/postgresql.jpg'
     alt: 'Apuntes JS'
-tags: ["Bases de datos", "Ciencia de Datos", "PostgreSQL", "SQL"]
+tags: ["Desarrollo", "Bases de datos", "Apuntes"]
 ---
 
 ## Aplicación de la ciencia de datos

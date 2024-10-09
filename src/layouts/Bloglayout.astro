@@ -61,6 +61,9 @@ const { title, description } = Astro.props;
 
     a {
       text-decoration: none;
+    }
+
+    article a {
       display: inline-block;
       width: 100%;
       white-space: nowrap;
@@ -111,6 +114,8 @@ const { title, description } = Astro.props;
       margin-bottom: 16px;
       font-weight: 600;
       line-height: 1.25;
+      text-overflow: ellipsis;
+      width: 100%;
     }
 
     article  p{

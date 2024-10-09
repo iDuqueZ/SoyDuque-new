@@ -7,7 +7,7 @@ author: 'Ivan D Duque'
 image:
     url: '/post/React.svg'
     alt: 'Foto SCRUM'
-tags: ["Anotaciones", "Desarrollo Web", "JavaScript", "React", "Front"]
+tags: ["Apuntes", "Código", "Desarrollo", "Web"]
 ---
 
 ## 1. ¿Qué es React.js y cómo crear un proyecto?

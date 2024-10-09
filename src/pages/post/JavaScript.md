@@ -7,7 +7,7 @@ author: 'Ivan D Duque'
 image:
     url: '/post/js.jpg'
     alt: 'Apuntes JS'
-tags: ["Anotaciones", "JavaScript", "Desarrollo Web"]
+tags: ["Apuntes", "Web", "Desarrollo", "Código"]
 ---
 
 ## ¿Qué es JS y para qué sirve?

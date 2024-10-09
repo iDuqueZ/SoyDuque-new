@@ -7,7 +7,7 @@ author: 'Ivan D Duque'
 image:
     url: '/post/scrumimg.svg'
     alt: 'Foto SCRUM'
-tags: ["Anotaciones", "SCRUM"]
+tags: ["Apuntes", "Agile"]
 ---
 
 Scrum es parte de las metodolgías ágiles
