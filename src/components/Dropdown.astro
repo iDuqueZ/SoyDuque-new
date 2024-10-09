@@ -9,10 +9,10 @@ const {tags} = Astro.props;
     </button>
     
     <!-- Dropdown menu -->
-    <div id="dropdownHover" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
-        <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
+    <div id="dropdownHover" class="z-10 hidden rounded-lg shadow w-44 dark:bg-zinc-700">
+        <ul class="py-2 text-sm w-full text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
           {tags.map((tag) => (
-            <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800">
+            <li class="px-4 py-2 hover:bg-gray-100 dark:hover:bg-zinc-800">
               <button class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">{tag}</button>
             </li>
           ))}

@@ -29,7 +29,7 @@ const AstroComponent = ({ url, imageUrl, title, date, autor, tags }) => {
               {tags.map((tag, index) => (
                 <span
                   key={index}
-                  className="bg-neutral-600 text-neutral-100 text-xs font-medium rounded-full py-2 px-3 mr-2 md:mb-2"
+                  className="bg-neutral-600 text-neutral-100 text-xs font-medium rounded-full py-2 px-3 mr-2 md:mb-2 h-8 whitespace-nowrap text-ellipsis overflow-hidden"
                 >
                   {tag}
                 </span>

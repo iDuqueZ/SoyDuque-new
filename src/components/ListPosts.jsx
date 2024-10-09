@@ -90,7 +90,7 @@ const ListPosts = ({ postList }) => {
                         {isOpen && (
                             <div
                                 id="dropdownHover"
-                                className="z-10 absolute top-full bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700"
+                                className="z-10 absolute top-full rounded-lg shadow md:w-44 w-full dark:bg-zinc-700"
                             >
                                 <ul className="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownHoverButton">
                                     <li className='px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-800'>

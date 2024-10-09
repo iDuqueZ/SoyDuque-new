@@ -28,15 +28,21 @@ Crear productos y responder al cambio Aceptar el cambio y entregar productos que
 
 - Pair programming
 
-TDD (Test Driven Development)
+- TDD (Test Driven Development)
 
 ## Diferencias entre desarrollo tradicional y ágil:
 
-1. Grupos de trabajo Tradicional: grupos grandes de trabajo, puede generar dificultades como saber quién está trabajando en qué. **Agil: **equipos de trabajo más pequeños con un tiempo de desarrollo corto ejm: 2 semanas (1 iteración)
+1. **Grupos de trabajo**
+- **Tradicional:** grupos grandes de trabajo, puede generar dificultades como saber quién está trabajando en qué. 
+- **Agil:** equipos de trabajo más pequeños con un tiempo de desarrollo corto ejm: 2 semanas (1 iteración)
 
-2. ¿Cómo se manejan los requerimientos? **Tradicional: **grandes listas de requerimientos. **Agil: **pequeñas listas de requerimientos que vamos a trabajar durante la iteración.
+2. **¿Cómo se manejan los requerimientos?**
+- **Tradicional:** grandes listas de requerimientos. 
+- **Agil:** pequeñas listas de requerimientos que vamos a trabajar durante la iteración.
 
-3. Generación de valor **Tradicional: **Trabajar toda la lista de requerimientos y al final mostrar al cliente con lo que creemos es el producto terminado. **Agil: **Entregar los pequeños avances al cliente cada iteración para que pueda ver los cambios en el producto poco a poco.
+3. **Generación de valor**
+- **Tradicional:** Trabajar toda la lista de requerimientos y al final mostrar al cliente con lo que creemos es el producto terminado. 
+- **Agil:** Entregar los pequeños avances al cliente cada iteración para que pueda ver los cambios en el producto poco a poco.
 
 ## ¿Qué es un Scrum?
 Es cuando todo un equipo colabora para lograr un objetivo. Definición: Es un marco de trabajo por el cual las personas pueden abordar problemas complejos adaptativos, a la vez que entregan productos del máximo valor posible productiva y creativamente. Es un equipo pequeño, individual flexible y adaptativo.
@@ -46,37 +52,40 @@ Se basa en la teoría de control de procesos empírica o empirismo. El empirismo
 
 ## Tres Pilares de Scrum:
 
-- **Transparencia:** Cualquier persona involucrada en el proyecto pueda saber el estado actual del proyecto.
-- **Inspección:** Los artefactos son lo que conocemos como requerimientos. Cualquier persona puede observar estos artefactos y analizar si están bien definidos o no.
-- **Adaptación:** La capacidad que tiene cualquier persona en el proceso de reconocer cambios y poderlos implementar lo más rápido.
-- **Los valores de Scrum:**
-	- Compromiso
-	- Coraje
-	- Enfoque
-	- Apertura
-	- Respeto
+**Transparencia:** Cualquier persona involucrada en el proyecto pueda saber el estado actual del proyecto.
+
+**Inspección:** Los artefactos son lo que conocemos como requerimientos. Cualquier persona puede observar estos artefactos y analizar si están bien definidos o no.
+
+**Adaptación:** La capacidad que tiene cualquier persona en el proceso de reconocer cambios y poderlos implementar lo más rápido.
+
+**Los valores de Scrum:**
+- Compromiso
+- Coraje
+- Enfoque
+- Apertura
+- Respeto
 
 ## Componentes de Scrum
-### El Equipo: Es un equipo auto-organizado y multifuncional. Existen 3 roles definidos:
-- Product Owner: Responsable de maximizar el producto. Es la cara del cliente dentro al equipo.
-- Scrum Master: Responsable de promover y apoyar el scrum.
-- Development Team: Profesionales que realizan el trabajo de entregar un incremento de producto "Terminado".
+#### El Equipo: Es un equipo auto-organizado y multifuncional. Existen 3 roles definidos:
+- **Product Owner:** Responsable de maximizar el producto. Es la cara del cliente dentro al equipo.
+- **Scrum Master:** Responsable de promover y apoyar el scrum.
+- **Development Team:** Profesionales que realizan el trabajo de entregar un incremento de producto "Terminado".
 
-### Eventos de Scrum: Existen eventos predefinidos con el fin de crear regularidad y minimizar la necesidad de reuniones no definidas en scrum.
-- Sprint: Es el corazón de Scrum donde se crea un incremento del producto. Son iteraciones de un proceso delimitado en un periodo de tiempo, donde el equipo trabaja un incremento del producto El sprint tiene elementos claves:
-- Sprint Planning: Ceremonia para definir qué se hará durante el sprint.
-- Daily stand-up(Scrum diario): Reunión diaria de todo el equipo de desarrollo.
-- Sprint review: Es donde se muestra el incremento desarrollado durante el sprint.
-- Retrospectiva: Es el proceso donde el equipo va a analizar y se va a auto-evaluar de que se hizo bien y que se puede mejorar, para tener un proceso de mejora continua.
+#### Eventos de Scrum: Existen eventos predefinidos con el fin de crear regularidad y minimizar la necesidad de reuniones no definidas en scrum.
+- **Sprint:** Es el corazón de Scrum donde se crea un incremento del producto. Son iteraciones de un proceso delimitado en un periodo de tiempo, donde el equipo trabaja un incremento del producto El sprint tiene elementos claves:
+- **Sprint Planning:** Ceremonia para definir qué se hará durante el sprint.
+- **Daily stand-up(Scrum diario)**: Reunión diaria de todo el equipo de desarrollo.
+- **Sprint review:** Es donde se muestra el incremento desarrollado durante el sprint.
+- **Retrospectiva:** Es el proceso donde el equipo va a analizar y se va a auto-evaluar de que se hizo bien y que se puede mejorar, para tener un proceso de mejora continua.
 
 ![Tabla de participantes por evento SCRUM](/post/5725cf20f3d3406fa631e2c1439427c2.png)
 
-### Artefactos de Scum
-- Representan trabajo o valor en diversas forma que son útiles para proporcionar transparencia y oportunidades para a inspección y adaptación. Los artefactos son:
-- Product Backlog (Lista de producto): Es una lista ordenada de todo lo que se conoce que es necesario en el producto.
-- Sprint Backlog (Lista de pendientes del sprint): Es un pequeño conjunto del product backlog que se va a trabajar en un sprint determinado.
+#### Artefactos de Scum
+Representan trabajo o valor en diversas forma que son útiles para proporcionar transparencia y oportunidades para a inspección y adaptación. Los artefactos son:
+- **Product Backlog (Lista de producto):** Es una lista ordenada de todo lo que se conoce que es necesario en el producto.
+- **Sprint Backlog (Lista de pendientes del sprint):** Es un pequeño conjunto del product backlog que se va a trabajar en un sprint determinado.
 
-### ++Principios del Manifiesto Agile++
+#### Principios del Manifiesto Agile
 
 1. **Satisfacción al cliente:** Nuestra mayor prioridad es satisfacer al cliente mediante la entrega temprana y continua de software con valor.
 
@@ -102,4 +111,4 @@ Se basa en la teoría de control de procesos empírica o empirismo. El empirismo
 
 12. **Auto- aprendizaje:** A intervalos regulares el equipo reflexiona sobre cómo ser más efectivo para a continuación ajustar y perfeccionar su comportamiento en consecuencia.
 
-Fuente: Manifiesto Agile
+_Fuente: Manifiesto Agile_
