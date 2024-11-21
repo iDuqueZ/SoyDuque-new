@@ -2,7 +2,7 @@
 layout: ../../layouts/Postlayout.astro
 pubDate: 2024-22-03
 title: 'JavaScript: Apuntes de clase'
-description: 'Estos son mis apuntes de estudio sobre JavaScript conceptos básicos'
+description: 'Estos son mis apuntes de estudio sobre JavaScript conceptos básicos (Esto es una prueba)'
 author: 'Ivan D Duque'
 image:
     url: '/post/js.jpg'
